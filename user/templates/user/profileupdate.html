@@ -1,0 +1,21 @@
+{%extends 'blog/base.html'%}
+
+{%block body%}
+<div class="container profile" id="profilediv">
+    
+    <form action="" method='POST' enctype="multipart/form-data">
+        {% csrf_token %} 
+        {{form}}
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+</div>
+
+{%endblock%}
+
+{%block script%}
+<script>
+$(document).ready(function(){
+    $("#id_date_of_birth").attr('type','date');
+  });
+</script>
+{%endblock%}

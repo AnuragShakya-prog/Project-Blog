@@ -1,0 +1,10 @@
+{%extends 'blog/base.html'%}
+{%block body%}
+<div class="form container login my-5" style="max-width:30em;">
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary">LogIn</button>
+    </form>
+</div>
+{%endblock%}

@@ -1,0 +1,48 @@
+{%extends 'blog/base.html'%}
+
+{%block body%}
+<div class="post-head">
+    <div class="post-image">
+        <img src="{{post.image.url}}" alt="" style="width: 100%;height: 100%;">
+    </div>
+    <div class="post-footer">
+        <div class="post-title">
+            {{post.title}}
+        </div>
+        <!-- <div class="post-writer">
+            <span>{{post.author.username}}</span>
+        </div> -->
+        <div class="more-info">
+            <div class="author">
+                {{post.author.username}}
+            </div>
+            <div class="pub-date">
+            {{post.pubdate}}
+        </div>
+        </div>
+    </div>
+    <div class="post-bottom">
+        <pre>{{post.content}}</pre>
+    </div>
+    <form action="" method="post">
+        {%csrf_token%}
+        <div class="comment-box">
+            <label for="commentbox" style="display: block;">Enter a comment</label>
+            <textarea name="commentbox" id="commentbox" cols="30" rows="10"></textarea>
+            <button type="submit" class="btn btn-primary">Post</button>
+        </div>
+    </form>
+
+    <div class="comments">
+        {%for comment in comments%}
+        <div class="card" style="width: 98%;">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">{{comment.author.username}}-{{comment.date_time}}</h6>
+              <p class="card-text"> {{comment.comment_text}}</p>
+            </div>
+          </div>
+        {%endfor%}
+    </div>
+</div>
+
+{%endblock%}

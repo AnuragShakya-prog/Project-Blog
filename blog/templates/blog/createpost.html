@@ -1,0 +1,12 @@
+{%extends 'blog/base.html'%}
+
+{%block body%}
+<div class="form container">
+    <form action="/createpost" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+</div>
+
+{%endblock%}

@@ -1,0 +1,31 @@
+{%extends 'blog\base.html'%}
+
+{%block body%}
+<div class="form container my-5">
+    <form action="" method="POST"> {% csrf_token %}
+        <fieldset>
+            {{form.as_p}}
+        </fieldset>
+        <fieldset>
+            <button type="submit" id='submitBtn' class="btn btn-primary">Submit</button>
+        </fieldset>
+    </form>
+</div>
+{%endblock%}
+
+{%block script%}
+<script>
+    console.log("Hefllo there");
+    let submitBtn=document.getElementById('submitBtn').addEventListener("click",validate);
+    function validate(event){
+        // event.preventDefault();
+        let password1=document.getElementById('id_password1');
+        let password2=document.getElementById('id_password2');
+        console.log("clicked");
+        if(password1.value!=password2.value){
+            console.log('Hey are you mad giving two different passowrd');
+            event.preventDefault();
+        }
+    }
+</script>
+{%endblock%}

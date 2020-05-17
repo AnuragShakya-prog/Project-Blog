@@ -1,0 +1,10 @@
+{%extends 'blog/base.html'%}
+
+{%block body%}
+<div class="profile-card">
+    {%load static%}
+     <img src="{{user_profile.profile_pic.url}}" alt="" style="border-radius: 50%;width: 100px;height: 100px;">
+     <h4 class="username">{{request.user.username}}</h4>
+     <a href="profileupdate/"><button class="btn btn-primary">Edit</button></a>
+</div>
+{%endblock%}

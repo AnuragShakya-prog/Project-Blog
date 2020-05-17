@@ -1,0 +1,25 @@
+{% extends 'blog/base.html'%}
+
+{%block body%}
+<div class="bg">
+    
+</div>
+<div class="cards">
+        {%for post in posts%}
+            <div class="card" style="max-width: 47em;width: auto;height: auto;min-height: 37em;">
+                
+                <img class="card-img-top" src="{{post.image.url}}" style='height: 70%;' alt="Card image cap">
+                
+                <div class="card-body">
+                <h5 class="card-title">{{post.title|slice:":150"}}...</h5>
+                <p class="card-text">{{post.content|slice:':400'}}</p>
+                <a href="/post/{{post.id}}/" class="btn btn-primary">Read More>>></a>
+                </div>
+    </div>
+        {%endfor%}
+</div>
+
+<div class="fixed">
+    Hello what
+</div>
+{%endblock%}
