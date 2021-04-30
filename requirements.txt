@@ -158,7 +158,7 @@ tornado==6.0.3
 traitlets==4.3.3
 Twisted==19.10.0
 txaio==20.1.1
-urllib3==1.25.7
+urllib3==1.25.8
 virtualenv==16.7.9
 watchdog==0.9.0
 wcwidth==0.1.8
