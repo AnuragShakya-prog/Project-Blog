@@ -122,7 +122,7 @@ pylint==2.4.4
 PyMsgBox==1.0.7
 pyOpenSSL==19.1.0
 pyparsing==2.4.6
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 pyperclip==1.7.0
 pypiwin32==223
 pypygo==0.1.1
